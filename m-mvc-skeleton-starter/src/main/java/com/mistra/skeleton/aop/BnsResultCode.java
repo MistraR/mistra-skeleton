@@ -1,7 +1,5 @@
 package com.mistra.skeleton.aop;
 
-import lombok.Data;
-
 /**
  * @author rui.wang
  * @ Version: 1.0
