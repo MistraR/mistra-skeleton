@@ -1,0 +1,1 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.mistra.skeleton.web.kafka.KafkaAutoConfiguration
