@@ -1,4 +1,4 @@
-package com.mistra.skeleton.web.kafka;
+package com.mistra.skeleton.kafka;
 
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
@@ -23,7 +23,7 @@ import java.util.Properties;
  */
 @Component
 @Configuration
-@ComponentScan(value = "com.mistra.mq")
+@ComponentScan(value = "com.mistra.skeleton.kafka")
 public class KafkaAutoConfiguration {
 
 }

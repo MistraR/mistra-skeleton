@@ -1,6 +1,6 @@
-package com.mistra.skeleton.web.redis.config;
+package com.mistra.skeleton.redis.config;
 
-import com.mistra.skeleton.web.redis.util.RedisUtil;
+import com.mistra.skeleton.redis.util.RedisUtil;
 import org.apache.logging.log4j.util.Base64Util;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.request.RequestContextHolder;

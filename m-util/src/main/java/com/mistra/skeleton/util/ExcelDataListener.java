@@ -1,4 +1,4 @@
-package com.mistra.skeleton.web.util;
+package com.mistra.skeleton.util;
 
 import com.alibaba.excel.context.AnalysisContext;
 import com.alibaba.excel.event.AnalysisEventListener;

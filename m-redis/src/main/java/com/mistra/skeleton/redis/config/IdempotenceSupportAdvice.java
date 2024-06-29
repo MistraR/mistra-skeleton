@@ -1,6 +1,6 @@
-package com.mistra.skeleton.web.redis.config;
+package com.mistra.skeleton.redis.config;
 
-import com.mistra.skeleton.web.redis.util.ReentrantLockUtil;
+import com.mistra.skeleton.redis.util.ReentrantLockUtil;
 import com.mistra.skeleton.web.aop.BnsResultCode;
 import com.mistra.skeleton.web.aop.BusinessException;
 import lombok.extern.slf4j.Slf4j;

@@ -1,7 +1,7 @@
-package com.mistra.skeleton.web.redis.util;
+package com.mistra.skeleton.redis.util;
 
-import com.mistra.skeleton.web.redis.config.Independent;
-import com.mistra.skeleton.web.redis.config.RedisErrorCode;
+import com.mistra.skeleton.redis.config.Independent;
+import com.mistra.skeleton.redis.config.RedisErrorCode;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 import org.slf4j.Logger;

@@ -1,4 +1,4 @@
-package com.mistra.skeleton.web.redis.config;
+package com.mistra.skeleton.redis.config;
 
 /**
  * @author rui.wang

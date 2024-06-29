@@ -1,4 +1,4 @@
-package com.mistra.skeleton.web.kafka;
+package com.mistra.skeleton.kafka;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

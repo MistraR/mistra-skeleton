@@ -1,4 +1,4 @@
-package com.mistra.skeleton.web.redis.util;
+package com.mistra.skeleton.redis.util;
 
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.MapUtils;
