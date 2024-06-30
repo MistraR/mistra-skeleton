@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/mistra?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: 123456
+
+mybatis-plus:
+  global-config:
+    db-config:
+      # 当数据库表的主键是自增id时，配置为AUTO
+      id-type: AUTO
+  configuration:
+    # 打印SQL日志 任选其一
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+logging:
+  level:
+    com:
+      mistra:
+        skeleton:
+          mybatis:
+            # 打印指定包SQL日志 任选其一
+            mapper: debug
