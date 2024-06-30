@@ -1,4 +1,4 @@
-package com.mistra.skeleton.web.aop;
+package com.mistra.skeleton.web.response;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
@@ -22,15 +22,14 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
  * @ Description:
  */
 @ControllerAdvice
-public class BnsResponseAdvice implements ResponseBodyAdvice<Object> {
+public class ResponseAdvice implements ResponseBodyAdvice<Object> {
 
     @Autowired
     private ObjectMapper objectMapper;
 
     @Override
     public boolean supports(MethodParameter returnType, Class<? extends HttpMessageConverter<?>> converterType) {
-        return returnType.hasMethodAnnotation(PostMapping.class) || returnType.hasMethodAnnotation(GetMapping.class)
-                || returnType.hasMethodAnnotation(DeleteMapping.class);
+        return returnType.hasMethodAnnotation(MistraResponse.class);
     }
 
     @SneakyThrows
@@ -39,8 +38,8 @@ public class BnsResponseAdvice implements ResponseBodyAdvice<Object> {
                                   Class<? extends HttpMessageConverter<?>> selectedConverterType, ServerHttpRequest request,
                                   ServerHttpResponse response) {
         if (selectedConverterType == StringHttpMessageConverter.class) {
-            return objectMapper.writeValueAsString(BnsResponseResult.buildSuccess(body));
+            return objectMapper.writeValueAsString(ResponseResult.buildSuccess(body));
         }
-        return BnsResponseResult.buildSuccess(body);
+        return ResponseResult.buildSuccess(body);
     }
 }

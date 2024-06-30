@@ -1,15 +1,18 @@
-package com.mistra.skeleton.web.aop;
+package com.mistra.skeleton.web.response;
+
+import lombok.Getter;
 
 /**
- * @author rui.wang
+ * @author Mistra
  * @ Version: 1.0
- * @ Time: 2022/10/19 14:08
- * @ Description:
+ * @ Time: 2024/6/30 11:09
+ * @ Description: 返回code
+ * @ Copyright (c) Mistra,All Rights Reserved.
+ * @ GitHub: <a href="https://github.com/MistraR">...</a>
+ * @ CSDN: <a href="https://blog.csdn.net/axela30w">...</a>
  */
-public enum BnsResultCode {
-    /**
-     *
-     */
+@Getter
+public enum ResultCode {
     SUCCESS(0, "处理成功", 200),
     SYSTEM_RUNTIME_EXCEPTION(1, "系统异常，请重试", 500),
     PARAM_NOT_VALID_EXCEPTION(2, "请求参数格式错误", 400),
@@ -28,19 +31,7 @@ public enum BnsResultCode {
     private final String message;
     private final Integer httpCode;
 
-    public Integer getHttpCode() {
-        return this.httpCode;
-    }
-
-    public Integer getCode() {
-        return this.code;
-    }
-
-    public String getMessage() {
-        return this.message;
-    }
-
-    private BnsResultCode(Integer code, String message, Integer httpCode) {
+    ResultCode(Integer code, String message, Integer httpCode) {
         this.code = code;
         this.message = message;
         this.httpCode = httpCode;

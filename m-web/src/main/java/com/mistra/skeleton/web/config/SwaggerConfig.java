@@ -9,10 +9,13 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
- * @author rui.wang
+ * @author Mistra
  * @ Version: 1.0
- * @ Time: 2022/10/12 10:53
+ * @ Time: 2024/6/30 11:09
  * @ Description:
+ * @ Copyright (c) Mistra,All Rights Reserved.
+ * @ GitHub: <a href="https://github.com/MistraR">...</a>
+ * @ CSDN: <a href="https://blog.csdn.net/axela30w">...</a>
  */
 @Configuration
 @EnableSwagger2

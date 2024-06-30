@@ -1,8 +1,8 @@
 package com.mistra.skeleton.redis.config;
 
 import com.mistra.skeleton.redis.util.ReentrantLockUtil;
-import com.mistra.skeleton.web.aop.BnsResultCode;
-import com.mistra.skeleton.web.aop.BusinessException;
+import com.mistra.skeleton.web.response.ResultCode;
+import com.mistra.skeleton.web.exception.BusinessException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -64,7 +64,7 @@ public class IdempotenceSupportAdvice {
                 !reentrantLockUtil.tryLock(IDEMPOTENCE_LOCK_PREFIX + idempotenceId, 0, 600) ||
                 !idempotence.check(idempotenceId))
             // idempotenceId为空 || 加锁不成功 || 幂等号不存在则直接返回
-            throw new BusinessException(BnsResultCode.SYSTEM_INVALID_REQUEST);
+            throw new BusinessException(ResultCode.SYSTEM_INVALID_REQUEST);
         // 删除幂等号
         idempotence.delete(idempotenceId);
         // 执行业务方法
