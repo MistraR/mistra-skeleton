@@ -7,14 +7,13 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Objects;
-import javax.servlet.http.HttpServletRequest;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
-import com.yamu.datablox.node.config.SecurityConstants;
 
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * @ author: rui.wang@yamu.com

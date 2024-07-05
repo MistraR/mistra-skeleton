@@ -33,7 +33,7 @@
         <slf4j.version>2.0.1</slf4j.version>
         <junit.version>4.13.2</junit.version>
         <!-- spring boot依赖-->
-        <spring-boot.version>3.0.2</spring-boot.version>
+        <spring-boot.version>3.3.0</spring-boot.version>
         <mybatis-plus.version>3.5.7</mybatis-plus.version>
 
         <redisson-spring-data-21.version>3.13.6</redisson-spring-data-21.version>
@@ -53,7 +53,7 @@
         <jedis.version>3.1.0</jedis.version>
         <redisson.version>3.16.3</redisson.version>
         <mybatis-spring-boot-starter.version>2.2.0</mybatis-spring-boot-starter.version>
-        <spring-cloud-nacos.version>2021.0.5.0</spring-cloud-nacos.version>
+        <spring-cloud-nacos.version>2023.0.1.0</spring-cloud-nacos.version>
 
         <sonar.projectKey>bns_mistra-skeleton_AYPo9anB3cQNz1G9UTGw</sonar.projectKey>
         <sonar.moduleKey>${artifactId}</sonar.moduleKey>
@@ -110,16 +110,6 @@
                 <version>${joda-time.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>${slf4j.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-log4j12</artifactId>
-                <version>${slf4j.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
@@ -164,16 +154,6 @@
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
                 <version>${mybatis-plus.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.redisson</groupId>
-                <artifactId>redisson-spring-data-21</artifactId>
-                <version>${redisson-spring-data-21.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.velocity</groupId>
-                <artifactId>velocity-engine-core</artifactId>
-                <version>${velocity.version}</version>
             </dependency>
             <dependency>
                 <groupId>redis.clients</groupId>
@@ -253,7 +233,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-openfeign</artifactId>
-                <version>2.2.6.RELEASE</version>
+                <version>4.1.2</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
