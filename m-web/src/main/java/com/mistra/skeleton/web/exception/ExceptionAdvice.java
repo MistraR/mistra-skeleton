@@ -1,19 +1,22 @@
 package com.mistra.skeleton.web.exception;
 
-import com.mistra.skeleton.web.response.InternationalizationUtil;
-import com.mistra.skeleton.web.response.ResponseResult;
-import com.mistra.skeleton.web.response.ResultCode;
-import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
+import java.util.List;
+import java.util.Objects;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindException;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+import com.mistra.skeleton.web.response.InternationalizationUtil;
+import com.mistra.skeleton.web.response.ResponseResult;
+import com.mistra.skeleton.web.response.ResultCode;
 
-import javax.servlet.http.HttpServletResponse;
-import java.util.List;
-import java.util.Objects;
+import jakarta.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author Mistra

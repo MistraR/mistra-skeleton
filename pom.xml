@@ -15,6 +15,7 @@
         <module>m-redis</module>
         <module>m-mybatis</module>
         <module>m-kafka</module>
+        <module>m-nacos</module>
     </modules>
 
     <properties>
@@ -51,6 +52,7 @@
         <jedis.version>3.1.0</jedis.version>
         <redisson.version>3.16.3</redisson.version>
         <mybatis-spring-boot-starter.version>2.2.0</mybatis-spring-boot-starter.version>
+        <spring-cloud-nacos.version>2021.0.5.0</spring-cloud-nacos.version>
 
         <sonar.projectKey>bns_mistra-skeleton_AYPo9anB3cQNz1G9UTGw</sonar.projectKey>
         <sonar.moduleKey>${artifactId}</sonar.moduleKey>
@@ -236,6 +238,16 @@
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>${google.guava}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+                <version>${spring-cloud-nacos.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+                <version>${spring-cloud-nacos.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
