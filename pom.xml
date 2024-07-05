@@ -20,44 +20,38 @@
     </modules>
 
     <properties>
+        <mistra-skeleton.version>1.0-SNAPSHOT</mistra-skeleton.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>17</java.version>
 
+        <!--工具包-->
         <commons-lang3.version>3.12.0</commons-lang3.version>
         <commons-collections4.version>4.4</commons-collections4.version>
         <mapstruct.version>1.5.2.Final</mapstruct.version>
         <lombok.version>1.18.24</lombok.version>
         <jackson-databind.version>2.13.4</jackson-databind.version>
         <joda-time.version>2.11.1</joda-time.version>
-        <slf4j.version>2.0.1</slf4j.version>
         <junit.version>4.13.2</junit.version>
-        <!-- spring boot依赖-->
+        <google.guava>30.1-jre</google.guava>
+        <hutool.version>5.1.1</hutool.version>
+
+        <!--spring boot依赖-->
         <spring-boot.version>3.3.0</spring-boot.version>
         <mybatis-plus.version>3.5.7</mybatis-plus.version>
-
-        <redisson-spring-data-21.version>3.13.6</redisson-spring-data-21.version>
-        <velocity.version>2.2</velocity.version>
-
-        <minio.version>8.4.5</minio.version>
         <swagger2.version>3.0.0</swagger2.version>
         <swagger-models>1.5.21</swagger-models>
-        <spring-kafka.version>2.5.17.RELEASE</spring-kafka.version>
-        <hutool.version>5.1.1</hutool.version>
+        <spring-kafka.version>3.2.1</spring-kafka.version>
         <easyexcel.version>2.2.3</easyexcel.version>
-        <google.guava>30.1-jre</google.guava>
 
-        <mistra-skeleton.version>1.0-SNAPSHOT</mistra-skeleton.version>
+        <!--中间件-->
         <mysql-connector-java.version>8.0.30</mysql-connector-java.version>
-        <druid.version>1.2.15</druid.version>
-        <jedis.version>3.1.0</jedis.version>
-        <redisson.version>3.16.3</redisson.version>
-        <mybatis-spring-boot-starter.version>2.2.0</mybatis-spring-boot-starter.version>
+        <druid.version>1.2.23</druid.version>
+        <jedis.version>5.2.0-beta4</jedis.version>
+        <redisson.version>3.32.0</redisson.version>
+        <mybatis-spring-boot-starter.version>3.0.3</mybatis-spring-boot-starter.version>
         <spring-cloud-nacos.version>2023.0.1.0</spring-cloud-nacos.version>
 
-        <sonar.projectKey>bns_mistra-skeleton_AYPo9anB3cQNz1G9UTGw</sonar.projectKey>
-        <sonar.moduleKey>${artifactId}</sonar.moduleKey>
-        <sonar.qualitygate.wait>true</sonar.qualitygate.wait>
     </properties>
 
     <dependencyManagement>
@@ -138,7 +132,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-log4j2</artifactId>
-                <version>${spring-boot.version}</version>
+                <version>3.3.1</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
