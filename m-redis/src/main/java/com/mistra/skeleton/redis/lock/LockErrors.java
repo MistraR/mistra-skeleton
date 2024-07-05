@@ -1,12 +1,9 @@
 package com.mistra.skeleton.redis.lock;
 
-import com.yamu.framework.common.StandardStringEnum;
-
 /**
- * 星火链相关的异常枚举值
- * 基础架构（1000）、分布式锁（01）、分布式锁子模块（01）、序列号
+ * 星火链相关的异常枚举值 基础架构（1000）、分布式锁（01）、分布式锁子模块（01）、序列号
  */
-public enum LockErrors implements StandardStringEnum {
+public enum LockErrors {
 
     /*
     系统异常
@@ -23,12 +20,10 @@ public enum LockErrors implements StandardStringEnum {
         this.description = description;
     }
 
-    @Override
     public String code() {
         return code;
     }
 
-    @Override
     public String description(Object... objs) {
         return String.format(description, objs);
     }

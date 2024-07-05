@@ -1,9 +1,8 @@
 package com.mistra.skeleton.redis.lock;
 
-import com.yamu.framework.common.StandardException;
-import com.yamu.framework.common.StandardStringEnum;
+import lombok.experimental.StandardException;
 
-public class LockException extends Exception implements StandardException {
+public class LockException extends Exception {
 
     private String code = LockErrors.LOCK_ERROR.code();
 
@@ -24,17 +23,10 @@ public class LockException extends Exception implements StandardException {
         this.cause = null;
     }
 
-    public LockException(StandardStringEnum cause, Object... objs) {
-        super(cause.description(objs));
-        this.code = cause.code();
-    }
-
-    @Override
     public String errorCode() {
         return code;
     }
 
-    @Override
     public String errorMessage() {
         return getMessage();
     }

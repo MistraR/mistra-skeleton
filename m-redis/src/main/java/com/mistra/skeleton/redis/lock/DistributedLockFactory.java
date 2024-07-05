@@ -1,7 +1,6 @@
 package com.mistra.skeleton.redis.lock;
 
 import java.util.concurrent.TimeUnit;
-import com.yamu.framework.dl.common.LockException;
 
 /**
  * 分布式锁工厂接口
