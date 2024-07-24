@@ -16,6 +16,8 @@ import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisClientConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
+import org.springframework.data.redis.listener.KeyExpirationEventMessageListener;
+import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 import org.springframework.util.StringUtils;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
@@ -92,5 +94,29 @@ public class RedisAutoConfiguration {
             serverConfig.setPassword(this.password);
         }
         return Redisson.create(config);
+    }
+
+    @Bean
+    public RedisMessageListenerContainer redisMessageListenerContainer(RedisConnectionFactory connectionFactory) {
+        RedisMessageListenerContainer redisMessageListenerContainer = new RedisMessageListenerContainer();
+        redisMessageListenerContainer.setConnectionFactory(connectionFactory);
+        return redisMessageListenerContainer;
+    }
+
+    /**
+     * 当某个Redis的key过期之后，Redis内部会发布一个事件到__keyevent@<db>__:expired这个channel上，只要监听这个事件，那么就可以获取到过期的key
+     * 将延迟任务作为key，过期时间设置为延迟时间
+     * 监听__keyevent@<db>__:expired这个channel，那么一旦延迟任务到了过期时间（延迟时间），那么就可以获取到这个任务
+     * Spring已经实现了监听__keyevent@*__:expired这个channel这个功能，__keyevent@*__:expired中的*代表通配符的意思，监听所有的数据库。
+     *
+     * 任务存在延迟：Redis过期事件的发布不是指key到了过期时间就发布，而是key到了过期时间被清除之后才会发布事件。 惰性清除 定时清除
+     * 丢消息太频繁：Redis实现的发布订阅模式，消息是没有持久化机制，当消息发布到某个channel之后，如果没有客户端订阅这个channel，那么这个消息就丢了
+     * 消息消费只有广播模式：所谓的广播模式就是多个消费者订阅同一个channel，那么每个消费者都能消费到发布到这个channel的所有消息。
+     * @param redisMessageListenerContainer
+     * @return
+     */
+    @Bean
+    public KeyExpirationEventMessageListener redisKeyExpirationListener(RedisMessageListenerContainer redisMessageListenerContainer) {
+        return new KeyExpirationEventMessageListener(redisMessageListenerContainer);
     }
 }

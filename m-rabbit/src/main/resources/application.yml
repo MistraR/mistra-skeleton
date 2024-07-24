@@ -1,0 +1,5 @@
+spring:
+  rabbitmq:
+    host: 192.168.200.144 #服务器ip
+    port: 5672
+    virtual-host: /

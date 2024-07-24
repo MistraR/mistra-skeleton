@@ -1,0 +1,4 @@
+rocketmq:
+  name-server: 192.168.200.144:9876 #服务器ip:nameServer端口
+  producer:
+    group: Producer
