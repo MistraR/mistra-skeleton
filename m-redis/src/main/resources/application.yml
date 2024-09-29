@@ -1,0 +1,12 @@
+server:
+  port: 8082
+
+spring:
+  # redis setting
+  redis:
+    host: localhost
+    port: 6379
+  # cache setting
+  cache:
+    redis:
+      time-to-live: 60000 # 60s

@@ -1,13 +1,13 @@
 package com.mistra.skeleton.redis.config;
 
-import com.mistra.skeleton.redis.util.RedisUtil;
+import java.util.UUID;
 import org.apache.logging.log4j.util.Base64Util;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
+import com.mistra.skeleton.redis.util.RedisUtil;
 
-import javax.servlet.http.HttpServletRequest;
-import java.util.UUID;
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * @author rui.wang

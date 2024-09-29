@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.mistra</groupId>
+        <artifactId>skeleton</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <groupId>com.yamu</groupId>
+    <artifactId>m-grpc</artifactId>
+    <name>m-grpc</name>
+
+    <properties>
+        <grpc.version>1.42.1</grpc.version>
+        <protobuf.version>3.7.1</protobuf.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.mistra</groupId>
+            <artifactId>m-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-protobuf</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-stub</artifactId>
+        </dependency>
+        <!--gRPC服务端-->
+        <dependency>
+            <groupId>net.devh</groupId>
+            <artifactId>grpc-server-spring-boot-starter</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}-${project.version}</finalName>
+        <extensions>
+            <extension>
+                <groupId>kr.motd.maven</groupId>
+                <artifactId>os-maven-plugin</artifactId>
+                <version>1.6.2</version>
+            </extension>
+        </extensions>
+
+        <plugins>
+            <!--            Grpc coding plug-in-->
+            <plugin>
+                <groupId>org.xolstice.maven.plugins</groupId>
+                <artifactId>protobuf-maven-plugin</artifactId>
+                <version>0.6.1</version>
+                <configuration>
+                    <!--suppress UnresolvedMavenProperty -->
+                    <!--&lt;!&ndash; ${os.detected.classifier} 变量由${os.detected.name} 和 ${os.detected.arch} 组成-->
+                    <protocArtifact>com.google.protobuf:protoc:${protobuf.version}:exe:${os.detected.classifier}</protocArtifact>
+                    <pluginId>grpc-java</pluginId>
+                    <pluginArtifact>io.grpc:protoc-gen-grpc-java:${grpc.version}:exe:${os.detected.classifier}</pluginArtifact>
+                    <!--                   protoSourceRoot 默认src/main/proto-->
+                    <!--                    <protoSourceRoot>src/java/main/proto</protoSourceRoot>-->
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>compile-custom</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
